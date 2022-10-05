@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AddressBook.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Adressbok" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Margin="20">
+                <TextBlock Text="Förnamn" Style="{StaticResource label}"/>
+                <TextBox x:Name="tb_FirsName" Style="{StaticResource field}"/>
+                <TextBlock Text="Efternamn" Style="{StaticResource label}"/>
+                <TextBox x:Name="tb_LastName" Style="{StaticResource field}"/>
+                <TextBlock Text="Telefonnummer" Style="{StaticResource label}"/>
+                <TextBox x:Name="tb_PhoneNumber" Style="{StaticResource field}"/>
+                <TextBlock Text="E-postadress" Style="{StaticResource label}"/>
+                <TextBox x:Name="tb_Email" Style="{StaticResource field}"/>
+
+            </StackPanel>
+            
+        </Grid>
 
     </Grid>
 </Window>
