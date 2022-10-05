@@ -27,9 +27,33 @@
                 <TextBox x:Name="tb_PhoneNumber" Style="{StaticResource field}"/>
                 <TextBlock Text="E-postadress" Style="{StaticResource label}"/>
                 <TextBox x:Name="tb_Email" Style="{StaticResource field}"/>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
 
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Gatuadress" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_StreetName" Style="{StaticResource field}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="8  0">
+                        <TextBlock Text="Postnummer" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_PostalCode" Style="{StaticResource field}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Ort" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_City" Style="{StaticResource field}"/>
+                    </StackPanel>
+                </Grid>
             </StackPanel>
-            
+
+            <Button x:Name="btn_Add" Grid.Row="1" Click="btn_Add_Click" Style="{StaticResource addButton}" />
+
         </Grid>
 
     </Grid>

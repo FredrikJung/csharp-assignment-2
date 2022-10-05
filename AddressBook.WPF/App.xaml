@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/LabelsDictionary.xaml" />
                 <ResourceDictionary Source="Resources/FieldsDictionary.xaml" />
+                <ResourceDictionary Source="Resources/ButtonsDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
          
