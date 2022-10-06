@@ -2,11 +2,61 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="addButton" TargetType="Button">
+        <Setter Property="Background" Value="#cfb571" />
         <Setter Property="Padding" Value="35 5" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="VerticalAlignment" Value="Bottom" />
         <Setter Property="Margin" Value="20" />
         <Setter Property="Content" Value="Lägg till" />
+        <Setter Property="FontWeight" Value="DemiBold" />
     </Style>
-    
+
+    <Style x:Key="saveButton" TargetType="Button">
+        <Setter Property="Background" Value="#cfb571" />
+        <Setter Property="Padding" Value="35 5" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Margin" Value="20" />
+        <Setter Property="Width" Value="116" />
+        <Setter Property="Content" Value="Spara" />
+        <Setter Property="FontWeight" Value="DemiBold" />
+    </Style>
+
+    <Style x:Key="backButton" TargetType="Button">
+        <Setter Property="Background" Value="#cfb571" />
+        <Setter Property="Padding" Value="35 5" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Margin" Value="0 0 139 20" />
+        <Setter Property="Width" Value="116" />
+        <Setter Property="RenderTransformOrigin" Value="0.478, -1.432" />
+        <Setter Property="Content" Value="Tillbaka" />
+        <Setter Property="FontWeight" Value="DemiBold" />
+    </Style>
+
+    <Style x:Key="deleteButton" TargetType="Button">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+        <Setter Property="Content" Value="&#xE711;" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="#cfb571" />
+        <Setter Property="Background" Value="#002554" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" Margin="{TemplateBinding Margin}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#ad1c1c" />
+                <Setter Property="Foreground" Value="#000000" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

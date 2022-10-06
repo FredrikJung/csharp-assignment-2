@@ -3,13 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AddressBook.WPF"
-        mc:Ignorable="d"
-        Title="Adressbok" Height="450" Width="800">
+        xmlns:local="clr-namespace:AddressBook.WPF"      
+        mc:Ignorable="d"     
+        Title="Adressbok" Height="450" Width="800" Background="#002554">
+    
+        
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4.5*" />
             <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -19,14 +21,29 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" Margin="20">
-                <TextBlock Text="Förnamn" Style="{StaticResource label}"/>
-                <TextBox x:Name="tb_FirsName" Style="{StaticResource field}"/>
-                <TextBlock Text="Efternamn" Style="{StaticResource label}"/>
-                <TextBox x:Name="tb_LastName" Style="{StaticResource field}"/>
-                <TextBlock Text="Telefonnummer" Style="{StaticResource label}"/>
-                <TextBox x:Name="tb_PhoneNumber" Style="{StaticResource field}"/>
-                <TextBlock Text="E-postadress" Style="{StaticResource label}"/>
-                <TextBox x:Name="tb_Email" Style="{StaticResource field}"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="Förnamn" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_FirstName" Style="{StaticResource field}"/>
+                        <TextBlock Text="Telefonnummer" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_PhoneNumber" Style="{StaticResource field}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="8 0 0 0">
+                        <TextBlock Text="Efternamn" Style="{StaticResource label}"/>
+                        <TextBox x:Name="tb_LastName" Style="{StaticResource field}"/>
+                    </StackPanel>
+                </Grid>
+                
+                <StackPanel>
+                    <TextBlock Text="E-postadress" Style="{StaticResource label}"/>
+                    <TextBox x:Name="tb_Email" Style="{StaticResource field}"/>
+                </StackPanel>
                 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -51,10 +68,31 @@
                     </StackPanel>
                 </Grid>
             </StackPanel>
-
-            <Button x:Name="btn_Add" Grid.Row="1" Click="btn_Add_Click" Style="{StaticResource addButton}" />
-
+            
+            <Button x:Name="btn_Add" Click="btn_Add_Click" Grid.Row="1" Style="{StaticResource addButton}" />
+            <Button x:Name="btn_Save" Click="btn_Save_Click" Grid.Row="1" Style="{StaticResource saveButton}" />
+            <Button x:Name="btn_GoBack" Click="btn_GoBack_Click" Grid.Row="1" Style="{StaticResource backButton}" />
         </Grid>
+
+        <ListView x:Name="lv_Contacts" SelectionChanged="lv_Contacts_SelectionChanged" Grid.Column="1" Style="{StaticResource ListView}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding FullName}" />
+                            <TextBlock Text="{Binding PhoneNumber}" FontSize="10" />
+                        </StackPanel>
+
+                        <Button x:Name="btn_Delete" Grid.Column="1" Click="btn_Delete_Click" Style="{StaticResource deleteButton}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Window>
