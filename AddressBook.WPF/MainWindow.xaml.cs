@@ -23,7 +23,7 @@ namespace AddressBook.WPF
     {
         private ObservableCollection<Contact> _contacts;
         private readonly IFileManager _fileManager;
-        private string _filePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\AddressBookWPF.json";
+        private readonly string _filePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\AddressBookWPF.json";
 
         public MainWindow(IFileManager fileManager)
         {
@@ -45,12 +45,14 @@ namespace AddressBook.WPF
         }
 
         private void btn_Add_Click(object sender, RoutedEventArgs e)
-        {           
+        {
             var contact = _contacts.FirstOrDefault(x => x.PhoneNumber == tb_PhoneNumber.Text);
+
             if (contact == null)
             {
                 _contacts.Add(new Contact
                 {
+
                     FirstName = tb_FirstName.Text,
                     LastName = tb_LastName.Text,
                     PhoneNumber = tb_PhoneNumber.Text,
@@ -93,7 +95,6 @@ namespace AddressBook.WPF
             btn_Add.Visibility = Visibility.Visible;
             btn_Save.Visibility = Visibility.Hidden;
             btn_GoBack.Visibility = Visibility.Hidden;
-
         }
 
         private void lv_Contacts_SelectionChanged(object sender, SelectionChangedEventArgs e)

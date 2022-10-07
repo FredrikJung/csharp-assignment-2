@@ -9,7 +9,7 @@ namespace AddressBook.WPF.Services
 {
     public interface IFileManager
     {
-        public void Save(string filePath, string content);
+        public void Save(string filePath, string json);
         public string Read(string filePath);
     }
     public class FileManager : IFileManager
@@ -20,10 +20,10 @@ namespace AddressBook.WPF.Services
             return  sr.ReadToEnd();
         }
 
-        public void Save(string filePath, string content)
+        public void Save(string filePath, string json)
         {
             using var sw = new StreamWriter(filePath);
-            sw.WriteLine(content);
+            sw.WriteLine(json);
         }
     }
 }
