@@ -28,9 +28,9 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <StackPanel>
-                        <TextBlock Text="Förnamn" Style="{StaticResource label}"/>
+                        <TextBlock Text="Förnamn *" Style="{StaticResource label}"/>
                         <TextBox x:Name="tb_FirstName" Style="{StaticResource field}"/>
-                        <TextBlock Text="Telefonnummer" Style="{StaticResource label}"/>
+                        <TextBlock Text="Telefonnummer *" Style="{StaticResource label}"/>
                         <TextBox x:Name="tb_PhoneNumber" Style="{StaticResource field}"/>
                     </StackPanel>
 
@@ -55,6 +55,7 @@
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="Gatuadress" Style="{StaticResource label}"/>
                         <TextBox x:Name="tb_StreetName" Style="{StaticResource field}"/>
+                        <TextBlock Text="* Fälten är obligatoriska att fylla i" Style="{StaticResource label2}"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="8  0">

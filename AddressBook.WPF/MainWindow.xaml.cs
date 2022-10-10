@@ -128,9 +128,27 @@ namespace AddressBook.WPF
         {
             var contact = lv_Contacts.SelectedItem as Contact;
 
-            contact!.FirstName = tb_FirstName.Text;
+            if (tb_FirstName.Text == "")
+            {
+                MessageBox.Show("Förnamn är obligatoriskt att fylla i");
+            }
+            else
+            {
+                contact!.FirstName = tb_FirstName.Text;
+            }
+
             contact!.LastName = tb_LastName.Text;
-            contact!.PhoneNumber = tb_PhoneNumber.Text;
+
+            if (tb_PhoneNumber.Text == "")
+            {
+                MessageBox.Show("Telefonnummer är obligatoriskt att fylla i");
+            }
+
+            else
+            {
+                contact!.PhoneNumber = tb_PhoneNumber.Text;
+            }
+
             contact!.Email = tb_Email.Text;
             contact!.StreetName = tb_StreetName.Text;
             contact!.PostalCode = tb_PostalCode.Text;
@@ -141,7 +159,8 @@ namespace AddressBook.WPF
             ClearTextBox();
 
             btn_Add.Visibility = Visibility.Visible;
-            btn_Save.Visibility = Visibility.Hidden;
+            btn_Save.Visibility = Visibility.Hidden; 
+            btn_GoBack.Visibility = Visibility.Hidden;
         }
 
         private void btn_GoBack_Click(object sender, RoutedEventArgs e)

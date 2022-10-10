@@ -6,6 +6,7 @@
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="VerticalAlignment" Value="Bottom" />
         <Setter Property="Margin" Value="20" />
+        <Setter Property="Background" Value="#bfd3e3" />
         <Setter Property="Content" Value="Lägg till" />
 
     </Style>
@@ -16,6 +17,7 @@
         <Setter Property="VerticalAlignment" Value="Bottom" />
         <Setter Property="Margin" Value="20" />
         <Setter Property="Width" Value="116" />
+        <Setter Property="Background" Value="#bfd3e3" />
         <Setter Property="Content" Value="Spara" />
 
     </Style>
@@ -26,6 +28,7 @@
         <Setter Property="VerticalAlignment" Value="Bottom" />
         <Setter Property="Margin" Value="0 0 139 20" />
         <Setter Property="Width" Value="116" />
+        <Setter Property="Background" Value="#bfd3e3" />
         <Setter Property="RenderTransformOrigin" Value="0.478, -1.432" />
         <Setter Property="Content" Value="Tillbaka" />
 
