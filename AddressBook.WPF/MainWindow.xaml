@@ -55,7 +55,7 @@
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="Gatuadress" Style="{StaticResource label}"/>
                         <TextBox x:Name="tb_StreetName" Style="{StaticResource field}"/>
-                        <TextBlock Text="* Fälten är obligatoriska att fylla i" Style="{StaticResource label2}"/>
+                        <TextBlock Text="* Obligatoriskt att fylla i detta fält" Style="{StaticResource label2}"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="8  0">

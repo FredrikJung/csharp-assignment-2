@@ -5,7 +5,7 @@
     <Style x:Key="ListView" TargetType="ListView">
         <Setter Property="Margin" Value="20" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-
+        <Setter Property="Background" Value="#bfd3e3" />
     </Style>
 
 
