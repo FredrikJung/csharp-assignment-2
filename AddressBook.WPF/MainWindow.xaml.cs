@@ -48,28 +48,34 @@ namespace AddressBook.WPF
         {
             var contact = _contacts.FirstOrDefault(x => x.PhoneNumber == tb_PhoneNumber.Text);
 
-            if (contact == null)
+            if(contact == null)
             {
-                _contacts.Add(new Contact
+                if(tb_FirstName.Text == "" || tb_PhoneNumber.Text == "")
                 {
+                    MessageBox.Show("Förnamn och telefonnummer är obligatoriska att fylla i");
+                }
+                else
+                {
+                    _contacts.Add(new Contact
+                    {
 
-                    FirstName = tb_FirstName.Text,
-                    LastName = tb_LastName.Text,
-                    PhoneNumber = tb_PhoneNumber.Text,
-                    Email = tb_Email.Text,
-                    StreetName = tb_StreetName.Text,
-                    PostalCode = tb_PostalCode.Text,
-                    City = tb_City.Text
+                        FirstName = tb_FirstName.Text,
+                        LastName = tb_LastName.Text,
+                        PhoneNumber = tb_PhoneNumber.Text,
+                        Email = tb_Email.Text,
+                        StreetName = tb_StreetName.Text,
+                        PostalCode = tb_PostalCode.Text,
+                        City = tb_City.Text
 
-                });
-                _fileManager.Save(_filePath, JsonConvert.SerializeObject(_contacts, Formatting.Indented));
-                UpdateContactList();
+                    });
+                    _fileManager.Save(_filePath, JsonConvert.SerializeObject(_contacts, Formatting.Indented));
+                    UpdateContactList();
+                }
             }
             else
             {
                 MessageBox.Show("Det finns redan en kontakt med samma telefonnummer");
             }
-
             ClearTextBox();
         }
         private void ClearTextBox()
@@ -106,7 +112,7 @@ namespace AddressBook.WPF
                 tb_FirstName.Text = contact.FirstName;
                 tb_LastName.Text = contact.LastName; ;
                 tb_PhoneNumber.Text = contact.PhoneNumber; ;
-                tb_Email.Text = contact.Email; ;
+                tb_Email.Text = contact.Email.ToLower(); ;
                 tb_StreetName.Text = contact.StreetName; ;
                 tb_PostalCode.Text = contact.PostalCode; ;
                 tb_City.Text = contact.City; ;
