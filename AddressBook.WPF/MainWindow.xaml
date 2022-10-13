@@ -14,7 +14,7 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         
-        <!--Skapar ny Grid för första kolumnen definerar att den ska ha två stycken rader-->
+        <!--Skapar ny Grid för första kolumnen och definerar att den ska ha två stycken rader-->
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
