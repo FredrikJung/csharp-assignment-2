@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace AddressBook.WPF
 {
-
+    //Aktiverar Dependency Injection
     public partial class App : Application
     {
         public static IHost? AppHost { get; private set; }

@@ -5,6 +5,7 @@
              >
     <Application.Resources>
         <ResourceDictionary>
+            <!--Aktiverar min ResourceDictionary så att jag kan använda de i min xaml kod-->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/LabelsDictionary.xaml" />
                 <ResourceDictionary Source="Resources/FieldsDictionary.xaml" />

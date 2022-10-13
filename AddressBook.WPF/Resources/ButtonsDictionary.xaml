@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
+    
+    <!--Skapar min designt för "Lägg till" knappen-->
     <Style x:Key="addButton" TargetType="Button">
         <Setter Property="Padding" Value="35 5" />
         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -10,6 +11,7 @@
         <Setter Property="Content" Value="Lägg till" />
     </Style>
 
+    <!--Skapar min designt för "Spara" knappen-->
     <Style x:Key="saveButton" TargetType="Button">
         <Setter Property="Padding" Value="35 5" />
         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -20,6 +22,7 @@
         <Setter Property="Content" Value="Spara" />
     </Style>
 
+    <!--Skapar min designt för "Tillbaka" knappen-->
     <Style x:Key="backButton" TargetType="Button">
         <Setter Property="Padding" Value="35 5" />
         <Setter Property="HorizontalAlignment" Value="Right" />
@@ -31,6 +34,7 @@
         <Setter Property="Content" Value="Tillbaka" />
     </Style>
 
+    <!--Skapar min designt för "Ta bort" knappen-->
     <Style x:Key="deleteButton" TargetType="Button">
         <Setter Property="FontSize" Value="16" />
         <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />

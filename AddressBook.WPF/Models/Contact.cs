@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBook.WPF.Models
 {
+    // En klass över hur en kontaktperson ska se ut och där ett nytt ID skapas automatiskt.
     internal class Contact
     {
         public Guid Id { get; set; } = Guid.NewGuid();
